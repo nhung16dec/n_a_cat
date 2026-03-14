@@ -76,8 +76,8 @@ const CATS = [
   },
   {
     id: 16,
-    name: "Pixel",
-    url: "https://i.pinimg.com/736x/fc/c8/ae/fcc8ae1f284e648816fded1150d0ed4c.jpg"
+    name: "Bday",
+    url: "https://i.pinimg.com/736x/9d/34/e1/9d34e1ec785a8f25a0daadeb8088734d.jpg"
   },
   {
     id: 17,
