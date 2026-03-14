@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Send a purr-fect cat message to someone .. 🐱"/>
+  <title>N a cat</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===========================
+       PAGE 1: COMPOSE
+       =========================== -->
+  <section id="page-compose" class="page">
+    <header class="app-header">
+      <div class="logo">
+        <div class="logo-icon">🐱</div>
+        <h1>& a cat</h1>
+      </div>
+      <p>Send a cat, send a message</p>
+    </header>
+
+    <form class="compose-form" onsubmit="return false;">
+      <!-- Cat picker -->
+      <div>
+        <p class="cat-picker-label">Choose your cat</p>
+        <p class="cat-picker-hint">Pick the one that speaks to your soul 🐾</p>
+        <div class="cat-grid" id="cat-grid">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+      <!-- To / From -->
+      <div class="field-row">
+        <div class="field">
+          <label for="input-to">To</label>
+          <input id="input-to" type="text" placeholder="Who are you sending to?" maxlength="60"/>
+        </div>
+        <div class="field">
+          <label for="input-from">From</label>
+          <input id="input-from" type="text" placeholder="Your name" maxlength="60"/>
+        </div>
+      </div>
+
+      <!-- Message -->
+      <div class="field">
+        <label for="input-message">Your message</label>
+        <textarea
+          id="input-message"
+          placeholder="Write something wonderful… or just say 'meow'."
+          maxlength="500"
+        ></textarea>
+      </div>
+
+      
+
+      <!-- Error + Submit -->
+      <p class="error-msg" id="error-msg"></p>
+      <button class="btn-send" id="btn-send">Send my word →</button>
+
+    </form>
+  </section>
+
+  <!-- ===========================
+       PAGE 2: CARD (result)
+       =========================== -->
+  <section id="page-card" class="page">
+    <div class="card-wrapper">
+
+      <!-- The card -->
+      <div class="bouquet-card">
+        <div class="card-header">
+          <span class="card-to">To</span>
+          <span class="card-recipient" id="card-to"></span>
+        </div>
+        <img class="card-cat" id="card-cat-img" src="" alt="cat" />
+        <div class="card-body">
+          <p class="card-message" id="card-message"></p>
+          <div class="card-footer">
+            <span class="card-from-label">From</span>
+            <span class="card-sender" id="card-from"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Share bar -->
+      <div class="share-bar">
+        <div class="share-url-box">
+          <input id="share-url" type="text" readonly />
+          <button class="btn-copy" id="btn-copy">Copy</button>
+        </div>
+        <button class="btn-new" id="btn-new">← Make another one</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Toast -->
+  <div class="toast" id="toast"></div>
+
+  <!-- Footer -->
+  <footer class="app-footer">
+    made by <a href="https://nhungportfolio.vercel.app/" target="_blank">Nhung 🐱</a>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="cats.js"></script>
+  <script src="app.js"></script>
+
+  <style>
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      20%       { transform: translateX(-6px); }
+      40%       { transform: translateX(6px); }
+      60%       { transform: translateX(-4px); }
+      80%       { transform: translateX(4px); }
+    }
+  </style>
+</body>
+</html>
